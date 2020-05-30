@@ -1,0 +1,3 @@
+[submodule "FsHtml"]
+	path = FsHtml
+	url = https://github.com/ptrelford/FsHtml.git
