@@ -58,6 +58,6 @@ printfn "Web根目录为:%s" home
 let listening, server = startWebServerAsync conf routing
 
 printfn "已经启动在 localhost:80 的HTTP服务。"
-//Process.Start ("http://localhost:80") |> ignore
+Process.Start ("http://localhost:80") |> ignore
 
 Async.RunSynchronously server
