@@ -8,6 +8,14 @@ open Suave.Successful
 open System.Diagnostics
 open Pages.Components.Common
 open Suave.State.CookieStateStore
+open System.IO
+
+let private dataSourceName = "mqprodb.mdb"
+let private dataSource = @"D:\" + dataSourceName
+if not (File.Exists dataSource) then
+    printfn "未发现数据库文件..."
+    File.Copy (dataSourceName,dataSource)
+    printfn "已将默认数据库文件复制到%s。" dataSource
 
 let home = 
     System.Environment.CurrentDirectory.TrimEnd('/','\\').Replace('/','\\')
